@@ -399,3 +399,87 @@ form label[for="email"] {
 form label[for="message"] {
     color: #afacac; /* Couleur pour "Message" */
 }
+/* Pour les petits écrans (mobiles) */
+@media (max-width: 767px) {
+    header.hero h1 {
+        font-size: 2rem;
+    }
+
+    header.hero p {
+        font-size: 1rem;
+    }
+
+    .tableau-centre {
+        width: 100%; /* Le tableau prend toute la largeur de l'écran */
+    }
+
+    .grid-layout {
+        grid-template-columns: 1fr; /* 1 colonne sur mobile */
+        grid-template-rows: auto; /* Adapter les lignes */
+        grid-template-areas: 
+            "amplificateurs"
+            "consoles"
+            "logiciels"
+            "parc-micro"
+            "systemes-sonorisation"
+            "instruments-musique"; /* Positionne les éléments en une colonne */
+    }
+
+    .container {
+        padding: 10px; /* Réduire le padding sur mobile */
+    }
+
+    section#contact {
+        padding: 20px;
+    }
+
+    .item {
+        padding: 10px; /* Réduire le padding des éléments */
+    }
+
+    section#about {
+        flex-direction: column; /* Disposition en colonne sur mobile */
+    }
+}
+
+/* Pour les tablettes */
+@media (min-width: 768px) and (max-width: 1024px) {
+    header.hero h1 {
+        font-size: 2.5rem;
+    }
+
+    header.hero p {
+        font-size: 1.1rem;
+    }
+
+    .tableau-centre {
+        width: 80%; /* Ajuster la largeur du tableau pour les tablettes */
+    }
+
+    .grid-layout {
+        grid-template-columns: 1fr 1fr; /* 2 colonnes sur tablette */
+        grid-template-areas: 
+            "amplificateurs consoles"
+            "logiciels parc-micro"
+            "systemes-sonorisation instruments-musique"; /* Réorganiser les éléments */
+    }
+
+    .container {
+        padding: 15px; /* Ajuster le padding sur tablette */
+    }
+}
+
+/* Pour les grands écrans (ordinateurs) */
+@media (min-width: 1025px) {
+    header.hero h1 {
+        font-size: 3.5rem;
+    }
+
+    header.hero p {
+        font-size: 1.3rem;
+    }
+
+    .tableau-centre {
+        width: 60%; /* Ajuster la largeur du tableau pour les grands écrans */
+    }
+}
