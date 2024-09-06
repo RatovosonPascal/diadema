@@ -1,0 +1,401 @@
+body {
+    font-family: 'Arial', sans-serif;
+    color:#FFD700; /* Couleur dorée */
+    background-color: #000; /* Fond noir */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+
+header.hero {
+    background-image: url('logo-fond.jpg');
+    background-size: cover;
+    background-position: center;
+
+    text-align: center;
+   /* padding: 150px 0;
+    position: relative;*/
+}
+
+header.hero .overlay {
+    color: #f0c74b;
+    font-family:'Bookman', 'URW Bookman L', serif;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 50px;
+    
+}
+
+header.hero h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+
+
+
+header.hero p {
+    font-size: 1.2rem;
+    margin: 20px 0 0;
+}
+.tableau-centre {
+    margin: 0 auto;
+    width: 50%; /* Ajustez la largeur si nécessaire */
+}
+
+section {
+    padding: 60px 20px;
+}
+th {
+    font-size: 2.2rem; 
+   
+        padding: 15px;
+        text-align: center
+}
+tr, td {
+    padding: 10px; /* Espace à l'intérieur des cellules */
+    border: 1px solid rgb(7, 7, 7); /* Bordure pour une meilleure visibilité */
+    text-align: center; /* Centrer le texte dans les colonnes */
+    border-radius: 10px;
+}
+table {
+    border-spacing: 30px 15px;/* Espace entre les colonnes */
+    width: 100%; /* Pour que le tableau prenne toute la largeur */
+}
+.content-container {
+    display: flex;
+    align-items: flex-start; /* Aligner les éléments au début (haut) */
+    justify-content: space-between; /* Espace entre l'image et le tableau */
+}
+
+.image-container {
+   
+    margin-right: 1px; /* Espacement entre l'image et le tableau */
+    
+}
+
+.table-container {
+    flex-grow: 1;
+    background-color: #262523; /* Prend tout l'espace restant disponible */
+}
+
+/* Pour centrer le tableau */
+.tableau-centre {
+    margin: 0 auto;
+   
+    width: 100%;
+    
+    
+}
+
+/* Optionnel: Ajustement de l'image */
+.image-container img {
+    max-width: 100%;
+    height: auto; /* S'assure que l'image reste responsive */
+}
+
+section h2 {
+    color: #f0c74b;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Comic Sans MS', cursive;/* Police personnalisée */
+    font-weight: bold; /* Texte en gras */
+    font-size: 50px; /* Taille du texte plus grande */
+
+    
+}
+.centered {
+    text-align: center; /* Centers the text horizontally */
+    margin: 0 auto; /* Ensures the margins are auto for block elements */
+    font-family: 'Brush Script MT', 'Brush Script Std', cursive;/* Police personnalisée */
+    font-weight: bold; /* Texte en gras */
+    font-size: 50px; /* Taille du texte plus grande */
+}
+section#about {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #2b2a2a; 
+    align-items: stretch;
+}
+
+section#about p {
+    font-family: 'Bookman', 'URW Bookman L', serif;
+    font-size: 1.2rem;
+    margin: 20px 0 0;
+    border-radius: 10px;
+}
+.container {
+    background-color: #0a0909; 
+    flex:2; /* Permet de prendre tout l'espace disponible */
+    min-width: 300px; /* Assure une largeur minimale pour le texte */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Permet au contenu de s'organiser en colonne */
+    justify-content: space-between; 
+    align-items: flex-start;
+}
+.item {
+    background-color: #3b3a3a; /* Fond des blocs */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;/* 3 colonnes */
+    grid-template-rows: auto 1fr auto ; /* 3 rangées */
+    grid-template-areas: 
+        "amplificateurs logiciels consoles"
+        "parc-micro logiciels systemes-sonorisation"
+        "instruments-musique instruments-musique instruments-musique"; /* Positionne les éléments */
+    gap: 20px; /* Espacement entre les éléments */
+}
+.item.amplificateurs {
+    grid-area: amplificateurs;
+}
+
+.item.consoles {
+    grid-area: consoles;
+}
+
+.item.logiciels {
+    color: #0a0a0a;
+    grid-area: logiciels;
+    background-color: #e6dca7;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    
+    
+}
+
+.item.parc-micro {
+    grid-area: parc-micro;
+}
+
+.item.systemes-sonorisation {
+    grid-area: systemes-sonorisation;
+}
+
+.item.instruments-musique {
+    grid-area: instruments-musique;
+}
+
+.note {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #D4C280; /* Couleur dorée pour la note */
+}
+
+.content {
+    flex: 1; /* Occupe un tiers de l'espace disponible */
+    padding: 20px;
+    background-color: #080808; /* Couleur de fond pour visualiser l'espace */
+    display: flex;
+    justify-content: center; /* Centre le contenu horizontalement */
+/*    align-items: center; /* Centre le contenu verticalement */
+}
+
+/* Assurez-vous que les styles pour les images s'appliquent correctement */
+section#about .images img {
+    max-width: 100%; /* L'image occupe 100% de la largeur de son conteneur */
+    border-radius: 10px; /* Ajoute des coins arrondis si désiré */
+    height: 100%; 
+    align-items: center;
+    width: auto;
+    object-fit: cover;
+    height: calc(100% - 40px);
+}
+
+section#pricing-location {
+    background-color:#222;
+    padding: 40px;
+    color: #f0c74b;
+}
+
+section#contact {
+    text-align: center;
+    padding: 40px;
+    background-color: #070707;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #f0c74b;
+}
+
+button {
+    background-color: #f0c74b;
+    color: #000;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e0b44b;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: #f0c74b;
+}
+.social-media {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.social-media a {
+    margin: 0 10px;
+}
+
+.social-media img {
+    transition: transform 0.3s ease;
+}
+
+.social-media img:hover {
+    transform: scale(1.1);
+}
+
+/* Styles pour la section de contact */
+#contact {
+    padding: 20px;
+    background-color: #f9f9f9;
+   
+    border-radius: 8px;
+    max-width: 600px;
+    margin: auto;
+}
+
+#contact h2 {
+    text-align: center;
+    color: #333;
+}
+
+#contact p {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#contact label {
+    font-weight: bold;
+}
+
+#contact input, #contact textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+#contact button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#contact button:hover {
+    background-color: #0056b3;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px; /* Espace entre le logo et le texte */
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.social-media a {
+    display: inline-block;
+}
+
+.social-media img {
+    vertical-align: middle;
+}
+.container-contact {
+    display: flex;
+    justify-content: center;  /* Centre le contenu horizontalement */
+    align-items: center;      /* Aligne le contenu verticalement */
+    min-height: 100vh;        /* S'assure que le conteneur prend toute la hauteur de la page */
+         /* Position relative pour permettre le positionnement absolu */
+}
+.logo {
+    position: absolute;
+    left: 5px;               /* Positionne le logo à gauche avec un petit espace */  
+               /* Vous pouvez ajuster cette valeur pour l'alignement vertical */
+}
+
+.div-contact {
+    max-width: 600px;         /* Limite la largeur du formulaire */
+    text-align: center;       /* Centre le texte à l'intérieur du formulaire */
+}
+
+.div-contact form {
+    display: flex;
+    flex-direction: column;   /* Aligne les éléments du formulaire verticalement */
+    gap: 10px;                /* Ajoute de l'espace entre les éléments du formulaire */
+}
+
+section#contact .container-contact p{
+    color:#FFD700; /* Couleur dorée */    
+}
+
+section#contact .container-contact h2{
+    color:#FFD700; /* Couleur dorée */    
+}
+form label[for="name"] {
+    color: #afacac; /* Couleur pour "Nom" */
+}
+
+form label[for="email"] {
+    color: #afacac; /* Couleur pour "Email" */
+}
+
+form label[for="message"] {
+    color: #afacac; /* Couleur pour "Message" */
+}
