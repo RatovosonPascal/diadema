@@ -6,42 +6,113 @@ body {
     padding: 0;
     line-height: 1.6;
 }
+.hero {
+    display: flex;
+    justify-content: center;  /* Centre horizontalement */
 
+               /* Hauteur de l'écran pour centrer le logo dans toute la page */
+    background-color: #060606; /* Couleur de fond pour le header */
+}
+.headerlogo {
+    width: 200px; /* Vous pouvez ajuster cette valeur selon la taille désirée */
+    height: auto; /* Cela permet de conserver les proportions de l'image */
 
-header.hero {
-    background-image: url('logo-fond.jpg');
-    background-size: cover;
-    background-position: center;
+}
 
+/* Style du conteneur de slider */
+.diaporama {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    background-color: #0a0a0a; /* Couleur de fond de la section */
+}
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slides.active {
+    opacity: 1;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes de taille égale */
+    grid-template-rows: repeat(2, 1fr); /* 2 lignes de taille égale */
+    height: 100vh; /* La section occupe 100% de la hauteur de la fenêtre */
+    gap: 10px; /* Espacement entre les éléments */
+}
+
+.grid-item {
+    position: relative;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.grid-item.large {
+    grid-column: 1 / span 2; /* Occupe les deux premières colonnes */
+    grid-row: 1 / span 2; /* Occupe la première ligne */
+}
+
+.grid-item.small:nth-child(2) {
+    grid-column: 3 / 4; /* Occupe la 3ème colonne */
+    grid-row: 1 / 2; /* Occupe la première ligne */
+}
+
+.grid-item.small:nth-child(3) {
+    grid-column: 4 / 5; /* Occupe la 4ème colonne */
+    grid-row: 1 / 2; /* Occupe la première ligne */
+}
+
+.grid-item.wide {
+    grid-column: 3 / span 2; /* Occupe les colonnes 3 et 4 */
+    grid-row: 2 / 3; /* Occupe la deuxième ligne */
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    color: white;
+    padding: 10px;
     text-align: center;
-   /* padding: 150px 0;
-    position: relative;*/
 }
-
-header.hero .overlay {
+.overlay h2{
     color: #f0c74b;
-    font-family:'Bookman', 'URW Bookman L', serif;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 50px;
-    
-}
-
-header.hero h1 {
-    font-size: 3rem;
-    margin: 0;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Comic Sans MS', cursive;/* Police personnalisée */
+    font-weight: bold; /* Texte en gras */
+    font-size: 20px; /* Taille du texte plus grande */  
 }
 
 
 
 
-header.hero p {
-    font-size: 1.2rem;
-    margin: 20px 0 0;
-}
-.tableau-centre {
-    margin: 0 auto;
-    width: 50%; /* Ajustez la largeur si nécessaire */
-}
+
 
 section {
     padding: 60px 20px;
@@ -114,7 +185,7 @@ section h2 {
 section#about {
     display: flex;
     flex-wrap: wrap;
-    background-color: #2b2a2a; 
+    background-color: #faf8f8; 
     align-items: stretch;
 }
 
@@ -136,12 +207,14 @@ section#about p {
     justify-content: space-between; 
     align-items: flex-start;
 }
+/*
 .item {
-    background-color: #3b3a3a; /* Fond des blocs */
+    background-color: #3b3a3a;  Fond des blocs 
     padding: 20px;
     border-radius: 10px;
     text-align: center;
 }
+    */
 
 .grid-layout {
     display: grid;
@@ -213,7 +286,7 @@ section#about .images img {
 }
 
 section#pricing-location {
-    background-color:#222;
+    background-color:#090909;
     padding: 40px;
     color: #f0c74b;
 }
@@ -357,13 +430,7 @@ footer {
 .social-media img {
     vertical-align: middle;
 }
-.container-contact {
-    display: flex;
-    justify-content: center;  /* Centre le contenu horizontalement */
-    align-items: center;      /* Aligne le contenu verticalement */
-    min-height: 100vh;        /* S'assure que le conteneur prend toute la hauteur de la page */
-         /* Position relative pour permettre le positionnement absolu */
-}
+
 .logo {
     position: absolute;
     left: 5px;               /* Positionne le logo à gauche avec un petit espace */  
@@ -380,6 +447,36 @@ footer {
     flex-direction: column;   /* Aligne les éléments du formulaire verticalement */
     gap: 10px;                /* Ajoute de l'espace entre les éléments du formulaire */
 }
+/*
+#reservation {
+   background-image: url('slide1.png'); 
+    
+    background-repeat: no-repeat; 
+    background-position: center; 
+    height: 200px; 
+}
+/*
+.container-reservation {
+   
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px; 
+    position: relative;
+    
+}
+/*
+.container-reservation a {
+    border: 2px solid #3498db;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;   
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+*/
 
 section#contact .container-contact p{
     color:#FFD700; /* Couleur dorée */    
@@ -400,86 +497,16 @@ form label[for="message"] {
     color: #afacac; /* Couleur pour "Message" */
 }
 /* Pour les petits écrans (mobiles) */
-@media (max-width: 767px) {
-    header.hero h1 {
-        font-size: 2rem;
-    }
 
-    header.hero p {
-        font-size: 1rem;
-    }
 
-    .tableau-centre {
-        width: 100%; /* Le tableau prend toute la largeur de l'écran */
-    }
-
-    .grid-layout {
-        grid-template-columns: 1fr; /* 1 colonne sur mobile */
-        grid-template-rows: auto; /* Adapter les lignes */
-        grid-template-areas: 
-            "amplificateurs"
-            "consoles"
-            "logiciels"
-            "parc-micro"
-            "systemes-sonorisation"
-            "instruments-musique"; /* Positionne les éléments en une colonne */
-    }
-
-    .container {
-        padding: 10px; /* Réduire le padding sur mobile */
-    }
-
-    section#contact {
-        padding: 20px;
-    }
-
-    .item {
-        padding: 10px; /* Réduire le padding des éléments */
-    }
-
-    section#about {
-        flex-direction: column; /* Disposition en colonne sur mobile */
-    }
+.footer {
+    border-top: 3px solid #3498db; /* Bordure en haut avec la couleur bleue */
+    padding: 20px; /* Espace intérieur du footer */
+    background-color: #0e0e0e; /* Couleur de fond du footer */
+    text-align: center; /* Centrer le texte */
+}
+.footer p{
+    font-family: 'Bookman', 'URW Bookman L', serif;
+    font-size: 1.2rem;   
 }
 
-/* Pour les tablettes */
-@media (min-width: 768px) and (max-width: 1024px) {
-    header.hero h1 {
-        font-size: 2.5rem;
-    }
-
-    header.hero p {
-        font-size: 1.1rem;
-    }
-
-    .tableau-centre {
-        width: 80%; /* Ajuster la largeur du tableau pour les tablettes */
-    }
-
-    .grid-layout {
-        grid-template-columns: 1fr 1fr; /* 2 colonnes sur tablette */
-        grid-template-areas: 
-            "amplificateurs consoles"
-            "logiciels parc-micro"
-            "systemes-sonorisation instruments-musique"; /* Réorganiser les éléments */
-    }
-
-    .container {
-        padding: 15px; /* Ajuster le padding sur tablette */
-    }
-}
-
-/* Pour les grands écrans (ordinateurs) */
-@media (min-width: 1025px) {
-    header.hero h1 {
-        font-size: 3.5rem;
-    }
-
-    header.hero p {
-        font-size: 1.3rem;
-    }
-
-    .tableau-centre {
-        width: 60%; /* Ajuster la largeur du tableau pour les grands écrans */
-    }
-}
