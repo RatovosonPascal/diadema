@@ -54,9 +54,7 @@ body {
     text-align: center;
     color: #f4da46;
     font-size: 40px;
-     font-family: 'Quicksand', sans-serif;
-
-   
+     font-family: 'Quicksand', sans-serif;  
 }
 
 .image-grid {
@@ -103,7 +101,6 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-
     color: white;
     padding: 10px;
     text-align: center;
@@ -176,8 +173,7 @@ section#about p {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    
-    
+   
 }
 
 .item.parc-micro {
