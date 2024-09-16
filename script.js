@@ -16,7 +16,7 @@ function showSlides() {
     slides[slideIndex - 1].classList.add('active');
 
     // Répéter toutes les 3 secondes
-    setTimeout(showSlides, 3000);
+    setTimeout(showSlides, 4500);
 }
 
 // Lancer le diaporama automatiquement

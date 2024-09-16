@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    color:#FFD700; /* Couleur dorée */
+    color:#f4da46; /* Couleur dorée */
     background-color: #000; /* Fond noir */
     margin: 0;
     padding: 0;
@@ -10,8 +10,6 @@ body {
     display: flex;
     justify-content: center;  /* Centre horizontalement */
     
-
-               /* Hauteur de l'écran pour centrer le logo dans toute la page */
     background-color: #060606; /* Couleur de fond pour le header */
 }
 .headerlogo {
@@ -25,13 +23,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-   
+
     background-color: #0a0a0a; /* Couleur de fond de la section */
 }
 
 .slideshow {
-    border: 1px solid #f3f17f;
+    border: 1px solid #f4da46;
     position: relative;
     width: 100%;
     max-width: 100%;
@@ -47,11 +44,19 @@ body {
     top: 0;
     left: 0;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 2s ease-in-out;
 }
 
 .slides.active {
     opacity: 1;
+}
+.phrasedaccroche h2{
+    text-align: center;
+    color: #f4da46;
+    font-size: 40px;
+     font-family: 'Quicksand', sans-serif;
+
+   
 }
 
 .image-grid {
@@ -104,7 +109,7 @@ body {
     text-align: center;
 }
 .overlay h2{
-    color: #f0c74b;
+    color:  #f0dd76;;
     text-align: center;
     margin-bottom: 40px;
     font-family: 'Comic Sans MS', cursive;/* Police personnalisée */
@@ -191,7 +196,7 @@ section#about p {
     text-align: center;
     margin-top: 20px;
     font-size: 0.9em;
-    color: #D4C280; /* Couleur dorée pour la note */
+    color:  #f0dd76;; /* Couleur dorée pour la note */
 }
 
 .content {
@@ -217,7 +222,7 @@ section#about .images img {
 section#pricing-location {
     background-color:#090909;
     padding: 40px;
-    color: #f0c74b;
+    color:  #f0dd76;;
 }
 
 section#contact {
@@ -233,11 +238,11 @@ form input, form textarea {
     border: none;
     border-radius: 5px;
     background-color: #333;
-    color: #f0c74b;
+    color:  #f4da46;
 }
 
 button {
-    background-color: #f0c74b;
+    background-color:  #f4da46;
     color: #000;
     padding: 15px 30px;
     border: none;
@@ -246,14 +251,14 @@ button {
 }
 
 button:hover {
-    background-color: #e0b44b;
+    background-color:  #f4da46;
 }
 
 footer {
     text-align: center;
     padding: 20px;
     background-color: #000;
-    color: #f0c74b;
+    color:  #f4da46;
 }
 .social-media {
     text-align: center;
@@ -379,11 +384,11 @@ footer {
 
 
 section#contact .container-contact p{
-    color:#FFD700; /* Couleur dorée */    
+    color:#f4da46; /* Couleur dorée */    
 }
 
 section#contact .container-contact h2{
-    color:#FFD700; /* Couleur dorée */    
+    color:#f4da46; /* Couleur dorée */    
 }
 form label[for="name"] {
     color: #afacac; /* Couleur pour "Nom" */
