@@ -9,6 +9,7 @@ body {
 .hero {
     display: flex;
     justify-content: center;  /* Centre horizontalement */
+    
 
                /* Hauteur de l'écran pour centrer le logo dans toute la page */
     background-color: #060606; /* Couleur de fond pour le header */
@@ -24,11 +25,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    
    
     background-color: #0a0a0a; /* Couleur de fond de la section */
 }
 
 .slideshow {
+    border: 1px solid #f3f17f;
     position: relative;
     width: 100%;
     max-width: 100%;
@@ -110,78 +113,12 @@ body {
 }
 
 
-
-
-
-
 section {
     padding: 60px 20px;
 }
-th {
-    font-size: 2.2rem; 
-   
-        padding: 15px;
-        text-align: center
-}
-tr, td {
-    padding: 10px; /* Espace à l'intérieur des cellules */
-    border: 1px solid rgb(7, 7, 7); /* Bordure pour une meilleure visibilité */
-    text-align: center; /* Centrer le texte dans les colonnes */
-    border-radius: 10px;
-}
-table {
-    border-spacing: 30px 15px;/* Espace entre les colonnes */
-    width: 100%; /* Pour que le tableau prenne toute la largeur */
-}
-.content-container {
-    display: flex;
-    align-items: flex-start; /* Aligner les éléments au début (haut) */
-    justify-content: space-between; /* Espace entre l'image et le tableau */
-}
 
-.image-container {
-   
-    margin-right: 1px; /* Espacement entre l'image et le tableau */
-    
-}
 
-.table-container {
-    flex-grow: 1;
-    background-color: #262523; /* Prend tout l'espace restant disponible */
-}
 
-/* Pour centrer le tableau */
-.tableau-centre {
-    margin: 0 auto;
-   
-    width: 100%;
-    
-    
-}
-
-/* Optionnel: Ajustement de l'image */
-.image-container img {
-    max-width: 100%;
-    height: auto; /* S'assure que l'image reste responsive */
-}
-
-section h2 {
-    color: #f0c74b;
-    text-align: center;
-    margin-bottom: 40px;
-    font-family: 'Comic Sans MS', cursive;/* Police personnalisée */
-    font-weight: bold; /* Texte en gras */
-    font-size: 50px; /* Taille du texte plus grande */
-
-    
-}
-.centered {
-    text-align: center; /* Centers the text horizontally */
-    margin: 0 auto; /* Ensures the margins are auto for block elements */
-    font-family: 'Brush Script MT', 'Brush Script Std', cursive;/* Police personnalisée */
-    font-weight: bold; /* Texte en gras */
-    font-size: 50px; /* Taille du texte plus grande */
-}
 section#about {
     display: flex;
     flex-wrap: wrap;
@@ -207,14 +144,6 @@ section#about p {
     justify-content: space-between; 
     align-items: flex-start;
 }
-/*
-.item {
-    background-color: #3b3a3a;  Fond des blocs 
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
-    */
 
 .grid-layout {
     display: grid;
@@ -447,36 +376,7 @@ footer {
     flex-direction: column;   /* Aligne les éléments du formulaire verticalement */
     gap: 10px;                /* Ajoute de l'espace entre les éléments du formulaire */
 }
-/*
-#reservation {
-   background-image: url('slide1.png'); 
-    
-    background-repeat: no-repeat; 
-    background-position: center; 
-    height: 200px; 
-}
-/*
-.container-reservation {
-   
-    text-align: center; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 300px; 
-    position: relative;
-    
-}
-/*
-.container-reservation a {
-    border: 2px solid #3498db;
-    font-size: 24px;
-    color: white;
-    text-decoration: none;   
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-*/
+
 
 section#contact .container-contact p{
     color:#FFD700; /* Couleur dorée */    
