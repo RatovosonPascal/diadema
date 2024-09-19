@@ -74,7 +74,7 @@ button {
 .image-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 colonnes de taille égale */
-    grid-template-rows: repeat(2, 1fr); /* 2 lignes de taille égale */
+    grid-auto-rows: minmax(100px, 1fr);
     height: 100vh; /* La section occupe 100% de la hauteur de la fenêtre */
     gap: 10px; /* Espacement entre les éléments */
 }
@@ -88,6 +88,8 @@ button {
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+    max-width: 100%; /* Ajoute cette ligne pour limiter la largeur */
+    max-height: 100%; /* Ajoute cette ligne pour limiter la hauteur */
 }
 
 .grid-item.large {
@@ -148,59 +150,9 @@ section#about p {
     margin: 20px 0 0;
     border-radius: 10px;
 }
-.container {
-    background-color: #0a0909; 
-    flex:2; /* Permet de prendre tout l'espace disponible */
-    min-width: 300px; /* Assure une largeur minimale pour le texte */
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column; /* Permet au contenu de s'organiser en colonne */
-    justify-content: space-between; 
-    align-items: flex-start;
-}
 
-.grid-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;/* 3 colonnes */
-    grid-template-rows: auto 1fr auto ; /* 3 rangées */
-    grid-template-areas: 
-        "amplificateurs logiciels consoles"
-        "parc-micro logiciels systemes-sonorisation"
-        "instruments-musique instruments-musique instruments-musique"; /* Positionne les éléments */
-    gap: 20px; /* Espacement entre les éléments */
-}
-.item.amplificateurs {
-    grid-area: amplificateurs;
-}
 
-.item.consoles {
-    grid-area: consoles;
-}
 
-.item.logiciels {
-    color: #0a0a0a;
-    grid-area: logiciels;
-    background-color: #e6dca7;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-   
-}
-
-.item.parc-micro {
-    grid-area: parc-micro;
-}
-
-.item.systemes-sonorisation {
-    grid-area: systemes-sonorisation;
-}
-
-.item.instruments-musique {
-    grid-area: instruments-musique;
-}
 
 .note {
     text-align: center;
@@ -221,25 +173,14 @@ section#about p {
 /* Assurez-vous que les styles pour les images s'appliquent correctement */
 section#about .images img {
     max-width: 100%; /* L'image occupe 100% de la largeur de son conteneur */
+    max-height: 100%;
     border-radius: 10px; /* Ajoute des coins arrondis si désiré */
-    height: 100%; 
     align-items: center;
     width: auto;
     object-fit: cover;
-    height: calc(100% - 40px);
+
 }
 
-section#pricing-location {
-    background-color:#090909;
-    padding: 40px;
-    color:  #f0dd76;;
-}
-
-section#contact {
-    text-align: center;
-    padding: 40px;
-    background-color: #070707;
-}
 
 form input, form textarea {
     width: 100%;
@@ -251,60 +192,35 @@ form input, form textarea {
     color:  #f4da46;
 }
 
-button {
-    background-color:  #f4da46;
-    color: #000;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color:  #f4da46;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #000;
-    color:  #f4da46;
-}
-.social-media {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.social-media a {
-    margin: 0 10px;
-}
-
-.social-media img {
-    transition: transform 0.3s ease;
-}
-
-.social-media img:hover {
-    transform: scale(1.1);
-}
-
 /* Styles pour la section de contact */
 #contact {
     padding: 20px;
-    background-color: #f9f9f9;
-   
+    background-color: #070707;
+    
+    padding: 40px;
     border-radius: 8px;
     max-width: 600px;
     margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  
 }
+.contact-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px; /* Ajustez selon vos besoins */
+}
+
 
 #contact h2 {
     text-align: center;
-    color: #333;
+    color: #ebba35;
 }
 
 #contact p {
     font-size: 16px;
-    color: #666;
+    color: #ebba35;
     text-align: center;
 }
 
@@ -365,20 +281,50 @@ footer {
     justify-content: center;
     gap: 10px;
     margin-top: 20px;
+    text-align: center;
+   
 }
 
 .social-media a {
     display: inline-block;
+    margin: 0 10px;
 }
 
 .social-media img {
     vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+button {
+    background-color:  #f4da46;
+    color: #000;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.logo {
+button:hover {
+    background-color:  #f4da46;
+}
+
+
+.social-media img:hover {
+    transform: scale(1.1);
+}
+
+section#contact .logocontact {
     position: absolute;
-    left: 5px;               /* Positionne le logo à gauche avec un petit espace */  
-               /* Vous pouvez ajuster cette valeur pour l'alignement vertical */
+    left: 4px;  
+    max-width: 100%;  /* L'image ne dépassera pas la largeur du conteneur */
+    height: auto;     /* Maintient les proportions de l'image */
+    display: flex;             /* Positionne le logo à gauche avec un petit espace */  
+              
+}
+
+
+.logocontact img {
+    max-width: 100%;
+    height: auto;
 }
 
 .div-contact {
@@ -391,6 +337,14 @@ footer {
     flex-direction: column;   /* Aligne les éléments du formulaire verticalement */
     gap: 10px;                /* Ajoute de l'espace entre les éléments du formulaire */
 }
+.container-contact {
+    display: flex;
+    align-items: center;  /* Aligne verticalement le logo et le contenu */
+    justify-content: flex-start;  /* Assure que le contenu est à gauche */
+    padding: 20px;
+    flex-wrap: wrap;  /* Permet au contenu de s'empiler sur les petits écrans */
+}
+
 
 
 section#contact .container-contact p{
@@ -419,7 +373,9 @@ form label[for="message"] {
     padding: 20px; /* Espace intérieur du footer */
     background-color: #0e0e0e; /* Couleur de fond du footer */
     text-align: center; /* Centrer le texte */
+    color:  #f4da46;
 }
+
 .footer p{
     font-family: 'Bookman', 'URW Bookman L', serif;
     font-size: 1.2rem;   
