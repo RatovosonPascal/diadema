@@ -51,25 +51,36 @@ body {
     opacity: 1;
 }
 
-.phrasedaccroche h2{
-    background: linear-gradient(45deg, #FFD700, #FFC700, #FFB700, #FF9900, #FFD700);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-    font-size: 2rem;
-    text-align: center;
-     font-family: 'Quicksand', sans-serif;  
-     font-weight: bold;
+.sectionphrasedaccroche {
+    background-color: #060606; /* Couleur de fond */
+    padding: 40px 20px; /* Espace autour du contenu */
+    padding-left: 80px; /* Espace supplémentaire à gauche */
+    padding-right: 80px; /* Espace supplémentaire à droite */
+    text-align: center; /* Centrer le texte */
+    font-family: Arial, sans-serif; /* Police moderne et lisible */
 }
-button {
-    background-color: #FFD700;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre pour donner du relief */
+
+.phrasedaccroche p {
+    font-size: 18px; /* Taille de texte */
+    line-height: 1.6; /* Espacement entre les lignes */
+    color: #f5c21a; /* Couleur de texte */
+    
+    margin: 0 auto; /* Centre le paragraphe */
+    padding: 10px 0; /* Espacement vertical interne */
+    text-align: justify;
 }
+
+@media screen and (max-width: 768px) {
+    .sectionphrasedaccroche {
+        padding-left: 20px; /* Réduit l'espace à gauche sur mobile */
+        padding-right: 20px; /* Réduit l'espace à droite sur mobile */
+    }
+    .phrasedaccroche p {
+        font-size: 16px; /* Taille de texte plus petite sur mobile */
+        padding: 20px; /* Espacement vertical plus large */
+    }
+}
+
 
 .image-grid {
     display: grid;
@@ -117,15 +128,25 @@ button {
     bottom: 0;
     left: 0;
     width: 100%;
-    color: white;
+    
     padding: 10px;
     text-align: center;
 }
+.overlay span{
+    font-size: 14px;
+    color: rgb(246, 27, 45);
+    text-shadow: 
+        0.5px 0.5px 0 white,  
+        -0.5px -0.5px 0 white,  
+        0.5px -0.5px 0 white,  
+        -0.5px 0.5px 0 white;
+   
+}
 .overlay h2{
-    color:  #f0dd76;;
+    color:  #f82828;
     text-align: center;
-    margin-bottom: 40px;
-    font-family: 'Comic Sans MS', cursive;/* Police personnalisée */
+    margin-bottom: 10px;
+    font-family: "Poppins", sans-serif ;/* Police personnalisée */
     font-weight: bold; /* Texte en gras */
     font-size: 20px; /* Taille du texte plus grande */  
 }
@@ -140,7 +161,7 @@ section {
 section#about {
     display: flex;
     flex-wrap: wrap;
-    background-color: #faf8f8; 
+    background-color: #f1e8b1; 
     align-items: stretch;
 }
 
