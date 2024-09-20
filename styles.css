@@ -1,5 +1,8 @@
+/* Importer la police Roboto depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: serif;
     color:#f4da46; /* Couleur dorée */
     background-color: #000; /* Fond noir */
     margin: 0;
@@ -52,19 +55,19 @@ body {
 }
 
 .sectionphrasedaccroche {
-    background-color: #060606; /* Couleur de fond */
+    background-color: #0a0909; /* Couleur de fond */
     padding: 40px 20px; /* Espace autour du contenu */
-    padding-left: 80px; /* Espace supplémentaire à gauche */
-    padding-right: 80px; /* Espace supplémentaire à droite */
+    padding-left: 100px; /* Espace supplémentaire à gauche */
+    padding-right: 100px; /* Espace supplémentaire à droite */
     text-align: center; /* Centrer le texte */
-    font-family: Arial, sans-serif; /* Police moderne et lisible */
+    font-family: "Josefin Sans", sans-serif;/* Police moderne et lisible */
 }
 
 .phrasedaccroche p {
-    font-size: 18px; /* Taille de texte */
+    font-size: 25px; /* Taille de texte */
     line-height: 1.6; /* Espacement entre les lignes */
-    color: #f5c21a; /* Couleur de texte */
-    
+    color: #feffff; /* Couleur de texte */
+    font-family: "Josefin Sans", sans-serif;
     margin: 0 auto; /* Centre le paragraphe */
     padding: 10px 0; /* Espacement vertical interne */
     text-align: justify;
@@ -134,18 +137,14 @@ body {
 }
 .overlay span{
     font-size: 14px;
-    color: rgb(246, 27, 45);
-    text-shadow: 
-        0.5px 0.5px 0 white,  
-        -0.5px -0.5px 0 white,  
-        0.5px -0.5px 0 white,  
-        -0.5px 0.5px 0 white;
+    color: rgb(255, 255, 255);
+  
    
 }
 .overlay h2{
-    color:  #f82828;
+    color:  #fdfafa;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: center;
     font-family: "Poppins", sans-serif ;/* Police personnalisée */
     font-weight: bold; /* Texte en gras */
     font-size: 20px; /* Taille du texte plus grande */  
@@ -161,7 +160,7 @@ section {
 section#about {
     display: flex;
     flex-wrap: wrap;
-    background-color: #f1e8b1; 
+    background-color: #fafaf7; 
     align-items: stretch;
 }
 
