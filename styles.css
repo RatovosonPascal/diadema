@@ -128,27 +128,33 @@ body {
 
 .overlay {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    margin: 0 auto; 
+    height: 100%; /* S'assure que l'overlay occupe toute la surface de l'image */
+    display: flex; /* Flexbox pour centrer le contenu */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    flex-direction: column; /* Empile le texte en colonne */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    color: white;
+
     text-align: center;
+}
+.grid-item:hover .overlay {
+    opacity: 1;
 }
 .overlay span{
     font-size: 14px;
-    color: rgb(255, 255, 255);
-    padding-left: 20px; /* Réduit l'espace à gauche sur mobile */
-    padding-right: 20px; /* Réduit l'espace à droite sur mobile */
+    padding: 0 20px;
   
    
 }
 .overlay h2{
-    color:  #fdfafa;
-    text-align: center;
-    margin-bottom: center;
-    font-family: "Poppins", sans-serif ;/* Police personnalisée */
-    font-weight: bold; /* Texte en gras */
-    font-size: 20px; /* Taille du texte plus grande */  
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
 }
 
 
