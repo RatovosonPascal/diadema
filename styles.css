@@ -165,39 +165,7 @@ section#about {
     font-family: "Poppins", sans-serif;
 }
 
-@media (max-width: 1024px) {
-    .image-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablettes */
-    }
 
-    .grid-item.large {
-        grid-column: 1 / span 2; /* Occupe 2 colonnes sur tablettes */
-        grid-row: 1 / span 1; /* Occupe la première ligne */
-    }
-
-    .grid-item.wide {
-        grid-column: 1 / span 2; /* Occupe les 2 colonnes sur la deuxième ligne */
-        grid-row: auto; /* Ajuste la position automatique en fonction du contenu */
-    }
-}
-
-/* Responsivité : Adaptation pour les petits écrans (smartphones) */
-@media (max-width: 768px) {
-    .image-grid {
-        grid-template-columns: 1fr; /* 1 colonne sur petits écrans */
-    }
-
-    .grid-item.large,
-    .grid-item.small,
-    .grid-item.wide {
-        grid-column: 1 / -1; /* Chaque élément occupe toute la largeur */
-        grid-row: auto; /* Ajuste la position en fonction du contenu */
-    }
-
-    .grid-item img {
-        height: auto; /* Laisse l'image ajuster sa hauteur selon la largeur */
-    }
-}
 
 section {
     padding: 60px 20px;
