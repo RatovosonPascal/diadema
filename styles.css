@@ -84,6 +84,7 @@ body {
     }
 }
 
+/* Style par défaut pour les écrans larges */
 section#about {
     display: flex;
     flex-wrap: wrap;
@@ -91,17 +92,17 @@ section#about {
     align-items: stretch;
 }
 
-
 .image-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 colonnes de taille égale */
-    grid-auto-rows: minmax(100px, 1fr);
-    height: 100vh; /* La section occupe 100% de la hauteur de la fenêtre */
+    grid-auto-rows: minmax(150px, auto); /* Ajustement automatique de la hauteur */
     gap: 10px; /* Espacement entre les éléments */
+    height: auto; /* Supprimez la contrainte 100vh pour laisser les images se dimensionner selon leur contenu */
 }
 
 .grid-item {
     position: relative;
+    overflow: hidden; /* Cache tout débordement du contenu */
 }
 
 .grid-item img {
@@ -109,28 +110,31 @@ section#about {
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
-    max-width: 100%; /* Ajoute cette ligne pour limiter la largeur */
-    max-height: 100%; /* Ajoute cette ligne pour limiter la hauteur */
 }
 
+/* Ajustement pour la grille large */
 .grid-item.large {
     grid-column: 1 / span 2; /* Occupe les deux premières colonnes */
-    grid-row: 1 / span 2; /* Occupe la première ligne */
+    grid-row: 1 / span 2; /* Occupe les deux premières lignes */
+    height: auto; /* Laisse l'image ajuster sa hauteur */
 }
 
+/* Ajustement pour la grille small */
 .grid-item.small:nth-child(2) {
     grid-column: 3 / 4; /* Occupe la 3ème colonne */
-    grid-row: 1 / 2; /* Occupe la première ligne */
+    grid-row: 1; /* Occupe la première ligne */
 }
 
 .grid-item.small:nth-child(3) {
     grid-column: 4 / 5; /* Occupe la 4ème colonne */
-    grid-row: 1 / 2; /* Occupe la première ligne */
+    grid-row: 1; /* Occupe la première ligne */
 }
 
+/* Ajustement pour la grille wide */
 .grid-item.wide {
     grid-column: 3 / span 2; /* Occupe les colonnes 3 et 4 */
-    grid-row: 2 / 3; /* Occupe la deuxième ligne */
+    grid-row: 2; /* Occupe la deuxième ligne */
+    height: auto; /* Laisse l'image ajuster sa hauteur */
 }
 
 .overlay {
@@ -144,27 +148,70 @@ section#about {
     align-items: center; /* Centre verticalement */
     flex-direction: column; /* Empile le texte en colonne */
     color: white;
-
     text-align: center;
-    opacity: 0; /* L'overlay est visible par défaut */
+    opacity: 0; /* L'overlay est invisible par défaut */
     transition: opacity 0.3s ease;
+    padding: 10px; /* Ajoutez du padding pour éviter que le texte ne colle trop au bord */
+    box-sizing: border-box; /* Inclure le padding dans la taille totale de l'élément */
+    overflow: hidden; /* Empêche tout débordement du texte */
 }
+
 .grid-item:hover .overlay {
     opacity: 1;
 }
-.overlay span{
+
+.overlay span {
     font-size: 12px;
     padding: 0 20px;
-  
-   
 }
-.overlay h2{
+
+.overlay h2 {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
     font-family: "Poppins", sans-serif;
+    max-width: 90%; /* Limite la largeur du texte pour éviter qu'il ne déborde */
+    overflow-wrap: break-word; /* Force le texte à revenir à la ligne si nécessaire */
 }
 
+/* Responsivité : Adaptation pour les tablettes */
+@media (max-width: 1024px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablettes */
+    }
+
+    .grid-item.large {
+        grid-column: 1 / span 2; /* Occupe 2 colonnes sur tablettes */
+        grid-row: auto; /* Ajuste la position automatique en fonction du contenu */
+    }
+
+    .grid-item.wide {
+        grid-column: 1 / span 2; /* Occupe les 2 colonnes sur la deuxième ligne */
+        grid-row: auto; /* Ajuste la position automatique en fonction du contenu */
+    }
+}
+
+/* Responsivité : Adaptation pour les petits écrans (smartphones) */
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: 1fr; /* 1 colonne sur petits écrans */
+    }
+
+    .grid-item.large,
+    .grid-item.small,
+    .grid-item.wide {
+        grid-column: 1 / -1; /* Chaque élément occupe toute la largeur */
+        grid-row: auto; /* Ajuste la position en fonction du contenu */
+    }
+
+    .grid-item img {
+        height: auto; /* Laisse l'image ajuster sa hauteur selon la largeur */
+    }
+
+    .overlay h2, .overlay span {
+        font-size: 14px; /* Réduit la taille du texte pour s'adapter aux petits écrans */
+    }
+}
 
 
 section {
