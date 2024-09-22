@@ -84,6 +84,13 @@ body {
     }
 }
 
+section#about {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fafaf7; 
+    align-items: stretch;
+}
+
 
 .image-grid {
     display: grid;
@@ -139,6 +146,8 @@ body {
     color: white;
 
     text-align: center;
+    opacity: 0; /* L'overlay est visible par défaut */
+    transition: opacity 0.3s ease;
 }
 .grid-item:hover .overlay {
     opacity: 1;
@@ -156,56 +165,44 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+@media (max-width: 1024px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablettes */
+    }
+
+    .grid-item.large {
+        grid-column: 1 / span 2; /* Occupe 2 colonnes sur tablettes */
+        grid-row: 1 / span 1; /* Occupe la première ligne */
+    }
+
+    .grid-item.wide {
+        grid-column: 1 / span 2; /* Occupe les 2 colonnes sur la deuxième ligne */
+        grid-row: auto; /* Ajuste la position automatique en fonction du contenu */
+    }
+}
+
+/* Responsivité : Adaptation pour les petits écrans (smartphones) */
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: 1fr; /* 1 colonne sur petits écrans */
+    }
+
+    .grid-item.large,
+    .grid-item.small,
+    .grid-item.wide {
+        grid-column: 1 / -1; /* Chaque élément occupe toute la largeur */
+        grid-row: auto; /* Ajuste la position en fonction du contenu */
+    }
+
+    .grid-item img {
+        height: auto; /* Laisse l'image ajuster sa hauteur selon la largeur */
+    }
+}
 
 section {
     padding: 60px 20px;
 }
 
-
-
-section#about {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #fafaf7; 
-    align-items: stretch;
-}
-
-section#about p {
-    font-family: 'Bookman', 'URW Bookman L', serif;
-    font-size: 1.2rem;
-    margin: 20px 0 0;
-    border-radius: 10px;
-}
-
-
-
-
-.note {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.9em;
-    color:  #f0dd76;; /* Couleur dorée pour la note */
-}
-
-.content {
-    flex: 1; /* Occupe un tiers de l'espace disponible */
-    padding: 20px;
-    background-color: #080808; /* Couleur de fond pour visualiser l'espace */
-    display: flex;
-    justify-content: center; /* Centre le contenu horizontalement */
-/*    align-items: center; /* Centre le contenu verticalement */
-}
-
-/* Assurez-vous que les styles pour les images s'appliquent correctement */
-section#about .images img {
-    max-width: 100%; /* L'image occupe 100% de la largeur de son conteneur */
-    max-height: 100%;
-    border-radius: 10px; /* Ajoute des coins arrondis si désiré */
-    align-items: center;
-    width: auto;
-    object-fit: cover;
-
-}
 
 
 form input, form textarea {
