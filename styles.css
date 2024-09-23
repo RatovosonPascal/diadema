@@ -94,75 +94,66 @@ section#about {
 
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colonnes de taille égale */
-    grid-auto-rows: minmax(150px, auto); /* Ajustement automatique de la hauteur */
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes égales */
+    grid-auto-rows: auto; /* Ajustement automatique de la hauteur selon le contenu */
     gap: 10px; /* Espacement entre les éléments */
-    height: auto; /* Supprimez la contrainte 100vh pour laisser les images se dimensionner selon leur contenu */
 }
 
+/* Chaque grid-item aura une hauteur minimale pour éviter qu'elles ne soient trop petites */
 .grid-item {
     position: relative;
     overflow: hidden; /* Cache tout débordement du contenu */
+    min-height: 200px; /* Hauteur minimale pour chaque élément */
 }
 
 .grid-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Remplit l'élément tout en gardant les proportions */
     border-radius: 10px;
 }
 
-/* Ajustement pour la grille large */
+/* Ajustement pour les éléments large et wide */
 .grid-item.large {
     grid-column: 1 / span 2; /* Occupe les deux premières colonnes */
-    grid-row: 1 / span 2; /* Occupe les deux premières lignes */
-    height: auto; /* Laisse l'image ajuster sa hauteur */
+    grid-row: 1 / span 2; /* Occupe deux lignes */
+    min-height: 400px; /* Hauteur minimale plus grande pour les éléments larges */
 }
 
-/* Ajustement pour la grille small */
-.grid-item.small:nth-child(2) {
-    grid-column: 3 / 4; /* Occupe la 3ème colonne */
-    grid-row: 1; /* Occupe la première ligne */
-}
-
-.grid-item.small:nth-child(3) {
-    grid-column: 4 / 5; /* Occupe la 4ème colonne */
-    grid-row: 1; /* Occupe la première ligne */
-}
-
-/* Ajustement pour la grille wide */
 .grid-item.wide {
     grid-column: 3 / span 2; /* Occupe les colonnes 3 et 4 */
-    grid-row: 2; /* Occupe la deuxième ligne */
-    height: auto; /* Laisse l'image ajuster sa hauteur */
+    grid-row: 2 / span 1; /* Occupe une ligne */
+    min-height: 300px; /* Hauteur minimale ajustée pour wide */
 }
 
+.grid-item.small {
+    min-height: 200px; /* Assure une hauteur minimale pour les petits éléments */
+}
+
+/* Texte overlay et transitions */
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* S'assure que l'overlay occupe toute la surface de l'image */
-    display: flex; /* Flexbox pour centrer le contenu */
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    flex-direction: column; /* Empile le texte en colonne */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     color: white;
     text-align: center;
-    opacity: 0; /* L'overlay est invisible par défaut */
-    transition: opacity 0.3s ease;
-    padding: 10px; /* Ajoutez du padding pour éviter que le texte ne colle trop au bord */
-    box-sizing: border-box; /* Inclure le padding dans la taille totale de l'élément */
-    overflow: hidden; /* Empêche tout débordement du texte */
+    background-color: rgba(5, 4, 4, 0.5);
+    /*opacity: 0;
+    transition: opacity 0.3s ease;*/
+    padding: 10px;
+    box-sizing: border-box;
+    pointer-events: none; /* Empêche les interactions quand l'overlay est invisible */
 }
 
 .grid-item:hover .overlay {
     opacity: 1;
-}
-
-.overlay span {
-    font-size: 12px;
-    padding: 0 20px;
+    pointer-events: all; /* Active les interactions quand visible */
 }
 
 .overlay h2 {
@@ -170,9 +161,26 @@ section#about {
     font-weight: bold;
     margin-bottom: 10px;
     font-family: "Poppins", sans-serif;
-    max-width: 90%; /* Limite la largeur du texte pour éviter qu'il ne déborde */
-    overflow-wrap: break-word; /* Force le texte à revenir à la ligne si nécessaire */
+    max-width: 90%;
+    word-wrap: break-word;
 }
+
+.overlay span {
+    font-size: 12px;
+    padding: 0 20px;
+    word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+    .overlay h2 {
+        font-size: 16px;
+    }
+
+    .overlay span {
+        font-size: 10px;
+    }
+}
+
 
 /* Responsivité : Adaptation pour les tablettes */
 @media (max-width: 1024px) {
@@ -182,34 +190,35 @@ section#about {
 
     .grid-item.large {
         grid-column: 1 / span 2; /* Occupe 2 colonnes sur tablettes */
-        grid-row: auto; /* Ajuste la position automatique en fonction du contenu */
+        grid-row: auto;
+        min-height: 300px; /* Réduit la hauteur pour les écrans plus petits */
     }
 
     .grid-item.wide {
-        grid-column: 1 / span 2; /* Occupe les 2 colonnes sur la deuxième ligne */
-        grid-row: auto; /* Ajuste la position automatique en fonction du contenu */
+        grid-column: 1 / span 2; /* Occupe les 2 colonnes */
+        grid-row: auto;
+        min-height: 250px; /* Ajuste la hauteur */
     }
 }
 
 /* Responsivité : Adaptation pour les petits écrans (smartphones) */
 @media (max-width: 768px) {
     .image-grid {
-        grid-template-columns: 1fr; /* 1 colonne sur petits écrans */
+        grid-template-columns: 1fr; /* 1 seule colonne sur petits écrans */
     }
 
-    .grid-item.large,
-    .grid-item.small,
-    .grid-item.wide {
+    .grid-item {
         grid-column: 1 / -1; /* Chaque élément occupe toute la largeur */
-        grid-row: auto; /* Ajuste la position en fonction du contenu */
+        grid-row: auto;
+        min-height: 200px; /* Ajuste la hauteur pour les petits écrans */
     }
 
     .grid-item img {
-        height: auto; /* Laisse l'image ajuster sa hauteur selon la largeur */
+        height: auto; /* Ajuste la hauteur des images en fonction de la largeur */
     }
 
     .overlay h2, .overlay span {
-        font-size: 14px; /* Réduit la taille du texte pour s'adapter aux petits écrans */
+        font-size: 14px; /* Réduit légèrement la taille du texte sur petits écrans */
     }
 }
 
@@ -403,7 +412,25 @@ form label[for="email"] {
 form label[for="message"] {
     color: #afacac; /* Couleur pour "Message" */
 }
-/* Pour les petits écrans (mobiles) */
+@media (max-width: 768px) {
+    section#contact .logocontact {
+        position: relative; /* Retire le positionnement absolu sur mobile */
+        left: 0; /* Réinitialise la position */
+        margin-bottom: 20px; /* Ajoute un espace entre le logo et le formulaire */
+        text-align: center; /* Centre le logo */
+    }
+
+    .logocontact img {
+        width: 120px;  /* Réduit la taille sur mobile */
+        height: auto;  /* Garde les proportions */
+        max-height: 120px; /* Limite la hauteur si nécessaire */
+    }
+
+    .div-contact {
+        margin-top: 20px; /* Assure qu'il y ait un espace suffisant en dessous du logo */
+    }
+}
+
 
 
 .footer {
