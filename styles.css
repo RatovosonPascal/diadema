@@ -72,6 +72,9 @@ body {
     padding: 10px 0; /* Espacement vertical interne */
     text-align: justify;
 }
+.phrasedaccroche b{
+    font-size: 30px
+}
 
 @media screen and (max-width: 768px) {
     .sectionphrasedaccroche {
@@ -149,9 +152,7 @@ a.image-link {
     align-items: center;
     flex-direction: column;
     color: white;
-    text-align: center;
-    background-color: rgba(5, 4, 4, 0.5);
-    
+    text-align: center;  
     padding: 10px;
     box-sizing: border-box;
     pointer-events: none; /* Empêche les interactions quand l'overlay est invisible */
@@ -169,14 +170,20 @@ a.image-link {
     font-family: "Poppins", sans-serif;
     max-width: 90%;
     word-wrap: break-word;
+    opacity: 1; /* Toujours visible */
+    transition: opacity 0.3s ease; /* Transition douce si on veut la modifier */
 }
 
 .overlay span {
     font-size: 12px;
     padding: 0 20px;
     word-wrap: break-word;
+    opacity: 0; /* Caché par défaut */
+    transition: opacity 0.3s ease; /* Transition douce pour apparaître au survol */
 }
-
+.grid-item:hover .overlay span {
+    opacity: 1;
+}
 
 @media (max-width: 768px) {
     .overlay h2 {
