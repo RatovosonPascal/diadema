@@ -72,8 +72,9 @@ body {
     padding: 10px 0; /* Espacement vertical interne */
     text-align: justify;
 }
-.phrasedaccroche b{
-    font-size: 30px
+.phrasedaccroche b {
+
+    color: #f2b42f;
 }
 
 @media screen and (max-width: 768px) {
